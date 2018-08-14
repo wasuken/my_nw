@@ -1,0 +1,12 @@
+---
+# tasks file for base-apt
+- name: 共通のパッケージのインストール
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - git
+    - emacs
+    - go
+    - ruby
+    - rbenv
+    - ruby-build
+    -

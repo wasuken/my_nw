@@ -1,0 +1,5 @@
+---
+# vars file for hostapd
+wlaniface: "wlan0"
+wifinet: "mywifie"
+wifipassword: "12345678"

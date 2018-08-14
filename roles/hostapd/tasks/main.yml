@@ -1,0 +1,9 @@
+---
+# tasks file for hostapd
+- name: ghost install
+  apt: name=hostapd state=latest update_cache=no
+- name: creating hostapd config
+  template: src=templates/hostapd.conf dest=/etc/hostapd/hostapd.conf
+- name: changing default/hostapd to set config
+  lineinfile: dest=/etc/default/hostapd line="DAEMON_CONF=/etc/hostapd/hostapd.conf" backup=no
+  notify: restart hostapd
